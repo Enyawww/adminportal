@@ -1,16 +1,11 @@
-// lib/db.js
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  user: 'postgres', // replace with your username
-  host: '103.18.244.31', // replace with your host
-  database: 'SAC_DB', // replace with your database name
-  password: 'SACAPU@2024', // replace with your password
-  port: 5454, // PostgreSQL port
+  user: process.env.DB_USER,        // Use environment variable for username
+  host: process.env.DB_HOST,        // Use environment variable for host
+  database: process.env.DB_NAME,    // Use environment variable for database name
+  password: process.env.DB_PASSWORD, // Use environment variable for password
+  port: process.env.DB_PORT,        // Use environment variable for port
 });
 
 export default pool;
-
-
-
-
